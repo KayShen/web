@@ -2,7 +2,9 @@ $ = require 'jQuery'
 
 $(document).ready (event) ->
   $('body').on 'click', '.answer', (e) ->
-    $(@).find('.icon-tick').addClass 'checked'
+    unless $(@).parent().find('.icon-tick').hasClass 'checked'
+      $(@).find('.icon-tick').addClass 'checked'
+    # $(@).off 'click'
     setTimeout ->
-      $('#iterateEffects').trigger 'click'
-    , 1000
+      Page.next()
+    , 800

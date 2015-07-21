@@ -9217,10 +9217,12 @@ $ = require('jQuery');
 
 $(document).ready(function(event) {
   return $('body').on('click', '.answer', function(e) {
-    $(this).find('.icon-tick').addClass('checked');
+    if (!$(this).parent().find('.icon-tick').hasClass('checked')) {
+      $(this).find('.icon-tick').addClass('checked');
+    }
     return setTimeout(function() {
-      return $('#iterateEffects').trigger('click');
-    }, 1000);
+      return Page.next();
+    }, 800);
   });
 });
 
