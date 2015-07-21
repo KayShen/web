@@ -126,7 +126,8 @@ main {
 }
 main .cd-main-content {
   position: relative;
-  height: calc(100vh - 20px);
+  // height: calc(100vh - 20px);
+  min-height: calc(100vh);
 }
 main .cd-main-content > div {
   height: 100%;
@@ -176,6 +177,7 @@ main .cd-main-content.cd-about {
 }
 main .cd-main-content.cd-about > div {
   padding-top: 50px;
+  // text-align: left;
 }
 main .cd-main-content.cd-about::after {
   background-color: rgba(40, 48, 64, 0);
@@ -340,7 +342,9 @@ main p {
     width: calc(100% - 40px);
   }
 }
-
+#cy{
+  height: 1000px;
+}
 
 .male {
   display: inline-block;
