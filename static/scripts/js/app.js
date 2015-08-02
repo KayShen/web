@@ -85,9 +85,10 @@ drawGraph = function() {
   return $(document).ready(function(event) {
     return $('#cy').cytoscape({
       style: cytoscape.stylesheet().selector('node').css({
-        'width': '60px',
-        'height': '60px',
-        'content': 'data(id)'
+        'width': '128px',
+        'height': '128px',
+        'content': 'data(id)',
+        'background-image': '/static/images/male.png'
       }).selector('edge').css({
         'width': 4,
         'target-arrow-shape': 'triangle',

@@ -223,7 +223,7 @@ a:hover {
 
 .content h2 {
 	font-weight: 300;
-	font-size: 4em;
+	font-size: 3em;
 	padding: 0 0 10px;
 	color: #333;
 	margin: 0 1% 40px;
@@ -243,6 +243,14 @@ a:hover {
 	padding: 5px 8%;
 	text-align: justify;
 }
+
+.question{
+	height: 100%;
+	/*margin-top: 60px;*/
+}
+.name-items{
+	height: 200px;
+}
 /*.content{
 	position: relative;
 	display: inline-block;
@@ -257,7 +265,7 @@ a:hover {
   border-radius: 5px;
   padding: 20px;
 }*/
-.content .answer{
+.answer{
 	position: relative;
 	width: 600px;
 	height: 30px;

@@ -92,9 +92,10 @@ drawGraph = ->
     $('#cy').cytoscape({
       style: cytoscape.stylesheet().selector('node')
                 .css({
-                  'width': '60px',
-                  'height': '60px',
+                  'width': '128px',
+                  'height': '128px',
                   'content': 'data(id)',
+                  'background-image': '/static/images/male.png'
                   # 'pie-size': '80%',
                   # 'pie-1-background-color': '#E8747C',
                   # 'pie-1-background-size': 'mapData(foo, 0, 10, 0, 100)',
