@@ -9217,12 +9217,9 @@ $ = require('jQuery');
 
 $(document).ready(function(event) {
   return $('body').on('click', '.answer', function(e) {
-    if (!$(this).parent().find('.icon-tick').hasClass('checked')) {
-      $(this).find('.icon-tick').addClass('checked');
-    }
     return setTimeout(function() {
       return Page.next();
-    }, 800);
+    }, 200);
   });
 });
 
