@@ -8,7 +8,8 @@ module.exports = {
   entry: {
     transform:'./transform',
     survey:[ './survey'],
-    about:['./main']
+    about:['./main'],
+    graph:['./graph']
     // vendor: [ path.resolve(__dirname, 'src/coffee/airtake/airtake.coffee')],
     // vendors:['react']
 

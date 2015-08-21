@@ -8,5 +8,5 @@ $(document).ready (event) ->
     else
       $('.male').addClass 'rotateOut'
     setTimeout ->
-      location.href = 'survey.html'
+      location.href = 'graph.html'
     ,1000

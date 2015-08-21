@@ -15,6 +15,9 @@ router.get '/index.html', (req, res) ->
 router.get '/about.html', (req, res) ->
   res.render 'about'
 
+router.get '/graph.html', (req, res) ->
+  res.render 'graph'
+
 router.get '/survey.html', (req, res) ->
   res.render 'survey'
 # 2T 活动 */

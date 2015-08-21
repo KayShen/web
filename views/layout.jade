@@ -1,21 +1,8 @@
-doctype html
-html(lang="en" class="js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths")
-  head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    meta(name='keywords', content='')
-    meta(name='description', content='')
-    meta(name='apple-mobile-web-app-capable', content='yes')
-    meta(name='apple-touch-fullscreen', content='yes')
-    meta(name='apple-mobile-web-app-status-bar-style', content='black')
-    meta(name='mobile-web-app-status-bar-style', content='black')
-    meta(name='mobile-web-app-capable', content='yes')
-    meta(name='format-detection', content='telephone=no,email=no')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
-    link(rel='stylesheet', type='text/css', href='./styles/css/index.css')
-    title My Website
-    script.
-        (function(){var ua=navigator.userAgent,isMobile=!!ua.match(/AppleWebKit.*Mobile.*|Airtake|Android.*AppleWebKit.*|Windows Phone/),isAndroid=!!ua.match(/android/gi),isIOS=!!ua.match(/iphone|ipad|ipod/gi),docEl=document.documentElement;docEl.setAttribute("data-device",isMobile?isAndroid?"android":isIOS?"ios":"mobile":"desktop"),isMobile&&function(e){function t(){var t=r.getBoundingClientRect().width;t/i>540&&(t=540*i),e.rem=t/16,r.style.fontSize=e.rem+"px"}var i,a,n,o=e.document,r=o.documentElement,d=o.querySelector('meta[name="viewport"]'),l=o.querySelector('meta[name="flexible"]');if(d){var s=d.getAttribute("content").match(/initial\\\-scale=(["']?)([\d\.]+)\1?/);s&&(a=parseFloat(s[2]),i=parseInt(1/a))}else if(l){var s=l.getAttribute("content").match(/initial\\-dpr=(["']?)([\d\.]+)\1?/);s&&(i=parseFloat(s[2]),a=parseFloat((1/i).toFixed(2)))}if(!i&&!a){var m=(e.navigator.appVersion.match(/android/gi),e.navigator.appVersion.match(/iphone/gi)),i=e.devicePixelRatio;i=m?i>=3?3:i>=2?2:1:1,a=1/i}if(r.setAttribute("data-dpr",i),!d)if(d=o.createElement("meta"),d.setAttribute("name","viewport"),d.setAttribute("content","initial-scale="+a+", maximum-scale="+a+", minimum-scale="+a+", user-scalable=no"),r.firstElementChild)r.firstElementChild.appendChild(d);else{var c=o.createElement("div");c.appendChild(d),o.write(c.innerHTML)}e.dpr=i,e.addEventListener("resize",function(){clearTimeout(n),n=setTimeout(t,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(n),n=setTimeout(t,300))},!1),"complete"===o.readyState?o.body.style.fontSize=12*i+"px":o.addEventListener("DOMContentLoaded",function(){o.body.style.fontSize=12*i+"px"},!1),t()}(window);})();
+extends ./base
+block styles
+  link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700')
+  link(rel='stylesheet', type='text/css', href='./styles/css/index.css')
+block content
   body(unselectable='on')
     main
       div.cd-index.cd-main-content
@@ -24,6 +11,7 @@ html(lang="en" class="js flexbox canvas canvastext webgl no-touch geolocation po
           a.cd-btn(href="about.html" data-type="page-transition")  Start Now
     div.cd-cover-layer
     div.cd-loading-bar
+  block scripts
     script(src='./libs/jquery.min.js')
     script(src='./scripts/js/transform.js')
     //- script(src='./libs/cytoscape.js')
