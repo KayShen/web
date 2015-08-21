@@ -8,3 +8,4 @@ $(document).ready (event) ->
     setTimeout ->
       Page.next()
     , 200
+

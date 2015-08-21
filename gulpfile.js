@@ -68,7 +68,7 @@ gulp.task('lint', function () {
 });
 
 gulp.task('coffee', ['lint'],function () {
-    var main =  gulp.src('./static/scripts/coffee/main.coffee', { read: false })
+    var main =  gulp.src('./static/scripts/coffee/transform.coffee', { read: false })
 
         // .pipe(sourcemaps.init())
         .pipe(browserify({
@@ -78,7 +78,7 @@ gulp.task('coffee', ['lint'],function () {
         }))
         .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
         .pipe(transform(function () { return exorcist(path.js + 'app.map.js'); }))
-        .pipe(rename('app.js'))
+        .pipe(rename('transform.js'))
     // .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.js))
         // .pipe(exorcist(path.js))

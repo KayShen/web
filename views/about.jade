@@ -23,13 +23,15 @@ html(lang="en" class="js flexbox canvas canvastext webgl no-touch geolocation po
     main
       div.cd-index.cd-main-content
         div
-          a.cd-btn(href="about.html" data-type="page-transition") | &#8592; Go back
-          div#cy(style="text-align: left;")
+          a.cd-btn(href="index.html" data-type="page-transition")  &#8592; Go back
+          //- div#cy(style="text-align: left;")
           h1 Select Your Gender
-          i.male
-          i.frmale
+          section.gender
+            i.male.animated.bounceInLeft
+            i.female.animated.bounceInRight
     div.cd-cover-layer
     div.cd-loading-bar
     script(src='./libs/jquery.min.js')
-    script(src='./scripts/js/app.js')
-    script(src='./libs/cytoscape.js')
+    script(src='./scripts/js/transform.js')
+    script(src='./scripts/js/about.js')
+    //- script(src='./libs/cytoscape.js')

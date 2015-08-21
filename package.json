@@ -44,7 +44,14 @@
     "coffeeify": "^0.7.0",
     "gulp-browserify": "^0.5.1",
     "gulp-coffeeify": "^0.1.8",
-    "merge-stream": "^0.1.7"
+    "merge-stream": "^0.1.7",
+    "webpack": "^1.11.0",
+    "sass-loader": "^1.0.4",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6",
+    "sass-loader": "^1.0.4",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6"
   },
   "scripts": {
     "dev": "NODE_ENV=development DEBUG=express,middleware nodemon lib/server.coffee --ignore public/ --ignore test/  --ignore node_modules/",
@@ -53,7 +60,10 @@
     "debug": "NODE_ENV=production DEBUG=* coffee lib/server.coffee",
     "db77": "coffee controllers/77/models/sync.coffee",
     "db77-online": "NODE_ENV=production DEBUG=* coffee controllers/77/models/sync.coffee",
-    "test": "NODE_ENV=development DEBUG=express coffee test/test.coffee"
+    "test": "NODE_ENV=development DEBUG=express coffee test/test.coffee",
+    "build": "webpack --display-error-details",
+    "d": "webpack-dev-server --devtool eval --progress --colors --hot --inline --content-base build",
+    "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js"
   },
   "author": "",
   "license": "ISC"
