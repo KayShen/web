@@ -1,4 +1,6 @@
 router = require('express').Router();
+ajax = require '../controllers'
+question = require '../controllers/question'
 
 # 一些默认页面
 router.get '/', (req, res)->
@@ -18,28 +20,14 @@ router.get '/about.html', (req, res) ->
 router.get '/graph.html', (req, res) ->
   res.render 'graph'
 
-router.get '/survey.html', (req, res) ->
-  res.render 'survey'
-# 2T 活动 */
-# ev2048 = require('./2048/');
-# router.get('/2048/', ev2048.index);
-# router.get('/2048/share', ev2048.share);
-# router.get('/2048game/', ev2048.game);
-
-# # 下载推广
-# downPage = require('./download');
-# router.get('/download/pink', downPage);
-# router.get('/download/blue', downPage);
-
-# # 照片冲印
-# print = require('./print');
-# router.get('/print', print.index);
-# router.post('/getCoupon', print.getCoupon);
+router.get '/survey.html', question.render
 
 
-# # 应用内 PC 导流页面
-# router.get('/pc', require('./pc'));
+router.get '/question', ajax.getQuestions
 
+router.post '/answer', question.answer
+
+router.get '/nodes', ajax.getNodes
 
 
 

@@ -3,7 +3,7 @@ block styles
   link(rel="stylesheet" type="text/css" href="./libs/jquery.jscrollpane.custom.css")
   link(rel="stylesheet" type="text/css" href="./libs/bookblock.css")
   link(rel="stylesheet" type="text/css" href="./libs/custom.css")
-  <script src="./libs/modernizr.custom.79639.js"></script>
+  script(src="./libs/modernizr.custom.79639.js")
 block content
   body(unselectable='on')
     div.container#container
@@ -31,23 +31,23 @@ block content
               div.bb-item#item4  Marys
               div.bb-item#item5  Marys
             span.top  do you konw ?
-            nav
-              span#bb-nav-prev  &larr;
-              span#bb-nav-next  &rarr;
-            span#tblcontents.menu-button  Table of Contents
+            //- nav
+            //-   span#bb-nav-prev  &larr;
+            //-   span#bb-nav-next  &rarr;
+            //- span#tblcontents.menu-button  Table of Contents
         div.answers
           div.answer
             span.icon-tick
-            p.answer-text  3
+            p.answer-text(data-a="3")  3
           div.answer
             span.icon-tick
-            p.answer-text  3
+            p.answer-text(data-a="3")  3
           div.answer
             span.icon-tick
-            p.answer-text  3
+            p.answer-text(data-a="3") 3
           div.answer
             span.icon-tick
-            p.answer-text  3
+            p.answer-text(data-a="3")  3
   block scripts
     script(src="./libs/jquery.min.js")
     script(src="./libs/jquery.mousewheel.js")

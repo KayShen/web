@@ -171,6 +171,6 @@ var Page = (function() {
 
 	}
 
-	return { init : init, next:bb.next.bind(bb), prev:bb.prev.bind(bb) };
+	return { init : init, next:bb.next.bind(bb), prev:bb.prev.bind(bb) , bb: bb};
 
 })();
