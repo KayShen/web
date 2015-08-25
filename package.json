@@ -36,6 +36,8 @@
     "nodemon": "^1.4.1",
     "serve-favicon": "^2.2.0",
     "underscore": "^1.8.3",
+    "mysql": "^2.8.0",
+    "sequelize": "^3.5.1",
     "vinyl-source-stream": "^1.1.0",
     "vinyl-transform": "^1.0.0",
     "xml": "^1.0.0"
