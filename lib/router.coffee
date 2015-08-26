@@ -3,8 +3,8 @@ ajax = require '../controllers'
 question = require '../controllers/question'
 
 # 一些默认页面
-router.get '/', (req, res)->
-  res.render('index', { title: 'Airtake' })
+# router.get '/', (req, res)->
+#   res.render('index', { title: 'Airtake' })
 
 
 router.get '/ok', (req, res) ->
