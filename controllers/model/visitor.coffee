@@ -2,9 +2,9 @@ Sequelize = require('sequelize')
 db = require '../../lib/mysql'
 
 Visitor = db.define('visitor', {
-  id:
-    type: Sequelize.INTEGER
-    autoIncrement: true
+  uid:
+    type: Sequelize.STRING
+    # autoIncrement: true
     primaryKey: true
 
   select:
@@ -15,7 +15,7 @@ Visitor = db.define('visitor', {
   freezeTableName: true
   indexes: [{
     unique: true
-    fields: ['id']
+    fields: ['uid']
   }]
 })
 

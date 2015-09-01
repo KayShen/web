@@ -7,9 +7,19 @@ Question = db.define('question', {
     autoIncrement: true
     primaryKey: true
 
-  nickName:
+  question:
     type: Sequelize.STRING
-    field: 'content'
+    field: 'question'
+    defaultValue: ''
+
+  select:
+    type: Sequelize.STRING
+    field: 'select'
+    defaultValue: ''
+
+  visitor:
+    type: Sequelize.STRING
+    field: 'visitor'
     defaultValue: ''
 }, {
   freezeTableName: true

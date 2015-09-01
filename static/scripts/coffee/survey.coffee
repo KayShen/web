@@ -2,6 +2,7 @@ $ = require 'jQuery'
 
 postAnswer = (data)->
   $.ajax({
+    headers: {'Cookie' : document.cookie }
     url:"answer"
     type: 'POST'
     data: data
