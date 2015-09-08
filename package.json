@@ -60,7 +60,7 @@
     "db77": "coffee controllers/77/models/sync.coffee",
     "db77-online": "NODE_ENV=production DEBUG=* coffee controllers/77/models/sync.coffee",
     "test": "NODE_ENV=development DEBUG=express coffee test/test.coffee",
-    "build": "webpack --display-error-details",
+    "build": "webpack --watch --display-error-details",
     "d": "webpack-dev-server --devtool eval --progress --colors --hot --inline --content-base build",
     "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js"
   },

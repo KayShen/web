@@ -1,11 +1,6 @@
 var Page = (function() {
-
-	var $container = $( '#container' ),
-		$bookBlock = $( '#bb-bookblock' ),
-		$items = $bookBlock.children(),
-		itemsCount = $items.length,
-		current = 0,
-		bb = $( '#bb-bookblock' ).bookblock( {
+	var config = {
+			startPage: window.order,
 			speed : 800,
 			perspective : 2000,
 			shadowSides	: 0.8,
@@ -23,7 +18,13 @@ var Page = (function() {
 				setJSP( 'destroy', old );
 
 			}
-		} ),
+		} ;
+	var $container = $( '#container' ),
+		$bookBlock = $( '#bb-bookblock' ),
+		$items = $bookBlock.children(),
+		itemsCount = $items.length,
+		current = 0,
+		bb = new BookBlock($( '#bb-bookblock' )[0], config),
 		$navNext = $( '#bb-nav-next' ),
 		$navPrev = $( '#bb-nav-prev' ).hide(),
 		$menuItems = $container.find( 'ul.menu-toc > li' ),

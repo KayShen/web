@@ -8,8 +8,10 @@ setQuetion = ({question, select, visitor})->
 
 index.render = (req, res)->
   console.log req.uid
+  order = req.query.q or 1
+  console.log req.uid , order
   res.render('survey',{
-
+    order
   })
 
 index.answer = (req, res)->
