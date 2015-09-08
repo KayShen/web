@@ -24,31 +24,45 @@ OPTIONS =
   zoomingEnabled: false
   panningEnabled: false
   userPanningEnabled: false
-  style: cytoscape.stylesheet().selector('node')
-            .css({
+  style: [
+          {'selector':'node'
+          style:{
               'width': '128px',
               'height': '128px',
               'content': 'data(id)',
-              'background-image': '/images/male.png'
-            })
-          .selector('edge')
-            .css({
+              # 'background-color': 'blue',
+              # 'background-image': '/images/male.png'
+            }}
+
+          {'selector':'edge'
+          style:{
               'width': 4,
               'opacity': 0.5
-            })
-          .selector(':selected')
-            .css({
+            }}
+
+          {'selector':':selected'
+          style:{
               'background-color': 'black',
               'line-color': 'black',
               'target-arrow-color': 'black',
               'source-arrow-color': 'black',
               'opacity': 1
-            })
-          .selector('.faded')
-            .css({
+            }}
+
+          {'selector':'.faded'
+          style:{
               'opacity': 0.25,
               'text-opacity': 0
-            })
+            }}
+
+          {'selector':'node[?aaa]'
+          style:{
+              'background-color': 'red',
+              'line-color': 'red',
+              'target-arrow-color': 'red',
+              'source-arrow-color': 'red',
+              'opacity': 1
+            }}]
   ready: ->
     # window.cy = this
     console.log 'ready'

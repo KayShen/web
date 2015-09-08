@@ -1,12 +1,23 @@
-
+Answer = require './model/answer'
 
 index = {}
 
+findAnswers = (visitor)-> new Promise (resolve, reject)->
+  where = {visitor}
+  Answer.findAll({where}).then (arr)->
+    # console.log arr
+    list = arr.map (item)->
+      item.toJSON()
+    console.log list
+    resolve list
 
 index.getQuestions = (req, res)->
   res.send 'ok'
 
 index.getNodes = (req, res) ->
+  uid =  req.cookies.uid
+
+  # console.log list
   data =
     nodes: [
       { data: { id: 'a', foo: 3, bar: 5, baz: 2 } },
@@ -17,7 +28,7 @@ index.getNodes = (req, res) ->
     ],
     edges: [
       { data: { id: 'ae', weight: 1, source: 'a', target: 'e' } },
-      { data: { id: 'ea', weight: 1, source: 'e', target: 'a' } },
+      # { data: { id: 'ea', weight: 1, source: 'e', target: 'a' } },
       { data: { id: 'ab', weight: 3, source: 'a', target: 'b' } },
       { data: { id: 'be', weight: 4, source: 'b', target: 'e' } },
       { data: { id: 'bc', weight: 5, source: 'b', target: 'c' } },
@@ -25,8 +36,16 @@ index.getNodes = (req, res) ->
       { data: { id: 'cd', weight: 2, source: 'c', target: 'd' } },
       { data: { id: 'de', weight: 7, source: 'd', target: 'e' } }
     ]
+  findAnswers(uid).then (list)->
+    console.log 1
+    list.forEach (item)->
+      console.log data
+      data.nodes[item.question].data.aaa = 1
 
-  res.json data
+    res.json data
+  .catch (err)->
+    console.log err
+    res.json {err}
 
 
 

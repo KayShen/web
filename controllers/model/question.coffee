@@ -9,24 +9,14 @@ Question = db.define('question', {
 
   question:
     type: Sequelize.STRING
-    field: 'question'
-    defaultValue: ''
-
-  select:
-    type: Sequelize.STRING
-    field: 'select'
-    defaultValue: ''
-
-  visitor:
-    type: Sequelize.STRING
-    field: 'visitor'
+    field: 'content'
     defaultValue: ''
 }, {
   freezeTableName: true
-  indexes: [{
-    unique: true
-    fields: ['id']
-  }]
+  # indexes: [{
+  #   unique: true
+  #   fields: ['id']
+  # }]
 })
 
 module.exports = Question
