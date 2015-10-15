@@ -27,11 +27,8 @@ block content
           div.bb-custom-wrapper
             span.top  How many
             div#bb-bookblock.bb-bookblock.question-wrapper.top
-              div.bb-item#item1  Marys
-              div.bb-item#item2  Marys
-              div.bb-item#item3  Marys
-              div.bb-item#item4  Marys
-              div.bb-item#item5  Marys
+              each name, index in names
+                div.bb-item(id="item#{index}")  #{name}
             span.top  do you konw ?
             //- nav
             //-   span#bb-nav-prev  &larr;
