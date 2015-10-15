@@ -17,7 +17,7 @@ $(document).ready (event) ->
     question = Page.bb.currentIdx
     answer = $(@).find('.answer-text').data('a')
     postAnswer({question, answer})
-    if Page.bb.currentIdx is 10
+    if Page.bb.currentIdx is 9
       if confirm 'Do you wnat to do more questions?'
         location.href = 'survey.html?q=11'
     else if Page.bb.currentIdx is Page.bb.itemsCount - 1

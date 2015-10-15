@@ -12,7 +12,7 @@ setAnswer = ({question, select, visitor})->
 names = ['Mary', 'Peter', 'Jim', 'Lily', 'Lucy', 'Lim', 'Tim', 'Jack', 'Tom', 'Wendy', 'Mark', 'Laura']
 index.render = (req, res)->
   console.log req.uid
-  order = req.query.q or 1
+  order = req.query.q or 0
   console.log req.uid , order
   res.render('survey',{
     order
