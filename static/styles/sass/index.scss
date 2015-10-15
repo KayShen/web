@@ -34,12 +34,6 @@ h1 {
   margin-bottom: 1em;
   font-size: 2.2rem;
 }
-@media only screen and (min-width: 768px) {
-  h1 {
-    font-size: 4.4rem;
-    font-weight: 300;
-  }
-}
 
 /* --------------------------------
 
@@ -58,12 +52,6 @@ Patterns - reusable parts of our design
   letter-spacing: 1px;
   text-transform: uppercase;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-.no-touch .cd-btn:hover {
-  background-color: #323c50;
-}
-.cd-about .cd-btn {
-  background-color: #4089a6;
 }
 
 /* --------------------------------
@@ -189,33 +177,6 @@ main .cd-main-content.cd-about::before {
   background-image: -webkit-linear-gradient(top, #283040, rgba(40, 48, 64, 0));
   background-image: linear-gradient(to bottom,#283040, rgba(40, 48, 64, 0));
 }
-main p {
-  width: 90%;
-  max-width: 768px;
-  margin: 3em auto;
-  font-size: 1.4rem;
-  line-height: 1.6;
-  color: #535966;
-  text-align: left;
-}
-// @media only screen and (min-width: 768px) {
-//   main {
-//     padding: 20px;
-//   }
-//   main .cd-main-content {
-//     height: calc(100vh - 40px);
-//   }
-//   main.cd-index > div {
-//     padding-top: 200px;
-//   }
-//   main.cd-index > div {
-//     padding-top: 50px;
-//   }
-//   main p {
-//     font-size: 1.8rem;
-//     line-height: 2;
-//   }
-// }
 
 .cd-cover-layer {
   /* layer that covers the content when the animation is triggered */
@@ -247,12 +208,6 @@ main p {
   -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
   -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
   transition: opacity 0.3s 0s, visibility 0s 0s;
-}
-@media only screen and (min-width: 768px) {
-  .cd-cover-layer {
-    height: calc(100% - 40px);
-    width: calc(100% - 40px);
-  }
 }
 
 .cd-loading-bar {
@@ -337,11 +292,7 @@ main p {
   -moz-transition: -moz-transform 0.8s 0.8s ease-in;
   transition: transform 0.8s 0.8s ease-in;
 }
-@media only screen and (min-width: 768px) {
-  .cd-loading-bar {
-    width: calc(100% - 40px);
-  }
-}
+
 #cy{
   height: 1000px;
 }
