@@ -76,6 +76,10 @@ requireUIDToken = (req, res, next) ->
 router.get '/ok', (req, res) ->
   res.send 'ok'
 
+router.get '/', (req, res) ->
+  # console.log 111
+  res.render 'layout'
+
 router.get '/index.html', (req, res) ->
   # console.log 111
   res.render 'layout'
@@ -94,6 +98,8 @@ router.get '/question', ajax.getQuestions
 router.post '/answer', [requireUIDToken, question.answer]
 
 router.get '/nodes', ajax.getNodes
+
+# router.get '/',
 
 
 
