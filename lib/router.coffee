@@ -99,7 +99,7 @@ router.post '/answer', [requireUIDToken, question.answer]
 
 router.get '/nodes', ajax.getNodes
 
-# router.get '/',
+router.get '/statistics', ajax.getStatistics
 
 
 

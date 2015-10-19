@@ -1,4 +1,5 @@
 Answer = require './model/answer'
+path = require 'path'
 
 index = {}
 
@@ -44,8 +45,19 @@ index.getNodes = (req, res) ->
 
     res.json data
   .catch (err)->
-    console.log err
+    console.log err, err.stack
     res.json {err}
+
+index.getStatistics = (req, res)->
+  uid =  req.cookies.uid
+  findAnswers(uid).then (list)->
+    console.log list
+    tmpl = require.resolve( path.join(__dirname, '../views', "statistics.jade"))
+    tmplFn = require('jade').compileFile(tmpl)
+    res.send  tmplFn({list})
+  .catch (err)->
+    console.log err
+    res.send 'error'
 
 
 
