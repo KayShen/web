@@ -99,9 +99,10 @@ router.post '/answer', [requireUIDToken, question.answer]
 
 router.get '/nodes', ajax.getNodes
 
+# router.get '/getStatistics', index.getStatistics
+
 router.get '/statistics', ajax.getStatistics
-
-
+  # res.render 'statistics'
 
 
 module.exports = router;

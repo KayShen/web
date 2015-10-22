@@ -1,4 +1,16 @@
-ul
-  each item in list
-    li
-      span #{item.question} | #{item.select}
+extends ./base
+block styles
+  //- link(rel='stylesheet', type='text/css', href='./styles/css/index.css')
+block content
+  body
+    h2 average #{average}
+    h2 max #{max}
+    h2 min #{min}
+    ul
+      each item in list
+        li
+          span #{item.question}th : #{item.select}
+  block scripts
+    //- script(src='./libs/jquery.min.js')
+    //- script(src='./libs/cytoscape.js')
+    //- script(src='./scripts/js/graph.js')

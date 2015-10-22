@@ -4,8 +4,15 @@ index = {}
 
 
 
-setAnswer = ({question, select, visitor})->
-  Answer.build({question, select, visitor}).save()
+setAnswer = ({question, select, visitor})-> new Promise (reslove, reject)->
+  where = {question, visitor}
+  Answer.findOrCreate({where})
+    .spread (answer, created)->
+      # console.log(answer, created)
+      unless created
+        answer.updateAttributes({question, select, visitor}).then -> reslove()
+      else
+        reslove()
 
 
 

@@ -8,6 +8,14 @@ postAnswer = (data)->
     data: data
   })
 
+getStatistics = ()->
+  $.ajax({
+    # headers: {'Cookie' : document.cookie }
+    url:"getStatistics"
+    type: 'GET'
+    # data: data
+  })
+
 $(document).ready (event) ->
   $('body').on 'click', '.answer', (e) ->
     # unless $(@).parent().find('.icon-tick').hasClass 'checked'
@@ -22,6 +30,7 @@ $(document).ready (event) ->
         location.href = 'survey.html?q=11'
     else if Page.bb.currentIdx is Page.bb.itemsCount - 1
       alert 'Thank you~'
+      location.href = 'statistics'
     else
       setTimeout ->
         Page.next()

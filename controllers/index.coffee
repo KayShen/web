@@ -1,5 +1,6 @@
 Answer = require './model/answer'
 path = require 'path'
+process = require('./processData').process
 
 index = {}
 
@@ -52,12 +53,14 @@ index.getStatistics = (req, res)->
   uid =  req.cookies.uid
   findAnswers(uid).then (list)->
     console.log list
-    tmpl = require.resolve( path.join(__dirname, '../views', "statistics.jade"))
-    tmplFn = require('jade').compileFile(tmpl)
-    res.send  tmplFn({list})
+    {average, min, max} = process(list)
+    # tmpl = require.resolve( path.join(__dirname, '../views', "statistics.jade"))
+    # tmplFn = require('jade').compileFile(tmpl)
+    # res.send  tmplFn({list, average, min, max})
+    res.render 'statistics',{list, average, min, max}
   .catch (err)->
     console.log err
-    res.send 'error'
+    res.render 'error'
 
 
 
