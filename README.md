@@ -11,3 +11,4 @@ ___
 1、 mysql 安装：brew install mysql
 2、 启动：mysqld.server start
 3、 建表： cd web & coffee controllers/model/sync.coffee
+4.
